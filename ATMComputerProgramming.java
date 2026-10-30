@@ -11,7 +11,7 @@ public static final Scanner s = new Scanner (System.in);
 	
 
 	login() {
-	
+	System.out.print("Hello Buseng");
 	}
 	
 
