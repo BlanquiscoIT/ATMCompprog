@@ -18,18 +18,31 @@ public static final Scanner s = new Scanner (System.in);
 		System.out.print("Enter PIN: ");
 		int pin = s.nextInt();
 			
-			if (pin.equals(passcode)){
+			if (pin < 1000 || pin > 9999){
+			    if (tries > 0){
+			        System.out.println("PIN must be 4 digits");
+			    }
+			    tries--;
+			    if (tries == 0){
+			        break;
+			    }
+			    continue;
+				
+			}else if (pin == passcode){
 				System.out.println("Access Granted");
 				break;
-			}else if (pin != passcode) {
-				System.out.println("Try Again");
-				tries--;
-				continue;
-			}else (tries == 0) {
-				System.out.println("Maximum Amount of Tries Reached");
-				break;
+			}else{
+			    tries--;
+			    if (tries > 0){
+			        System.out.println("Try Again");
+			    }
 			}
 		}
+		
+		if (tries == 0){
+		    System.out.println("Maximum amount of tries reached");
+	    }
+  	}
 
 
 		
