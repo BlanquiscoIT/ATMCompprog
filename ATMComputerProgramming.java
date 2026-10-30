@@ -10,7 +10,7 @@ public static final Scanner s = new Scanner (System.in);
 	}
 	
 
-	static double login() {
+	static void login() {
 		int tries = 3;
 		final int passcode = 1234;
 		
