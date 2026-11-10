@@ -62,7 +62,7 @@ public class CompProgAct {
 	    while (tries > 0) {
 	        System.out.print("Enter your PIN: ");
 	        
-	        // FIX: kapag letters ang input, nagcocrash yung nextInt(), kaya chinecheck muna
+	       
 	        if (!s.hasNextInt()) {
 	            s.nextLine();
 	            tries--;
@@ -153,7 +153,7 @@ public class CompProgAct {
 	}
 	
 	
-	static boolean attendanceCheck(double attendance) { //FIX: This module checks if the student has an attendance lower than 80. Returns true if lower than 80 (DROPPED), returns false if 80 or higher.
+	static boolean attendanceCheck(double attendance) { 
 		if (attendance < 80) {
 			return true; 
 			}
@@ -196,7 +196,7 @@ public class CompProgAct {
 	
 	
     static double getGradeEquI(double average) {
-    	double percent = Math.round(average * 100) / 100.0; // 2 decimal places muna para walang gap sa table
+    	double percent = Math.round(average * 100) / 100.0;
     	
     	if (percent >= 96.50) {
     		return 1.00;
@@ -221,8 +221,6 @@ public class CompProgAct {
     	}
     }
     
-    
-    // ===================== NEW MODULES =====================
     
     // ito yung buong process para sa 1 student (input, compute, display)
     static void processStudent(int number) {
@@ -277,7 +275,8 @@ public class CompProgAct {
     static double computeFinalAverage(double quizPct, double labPct, double examPct, double attendPct) {
     	return (examPct * 0.30) + (labPct * 0.40) + (quizPct * 0.20) + (attendPct * 0.10);
     }
-    
+
+	// ni-rreset yung values kapag nag ulit ng isa pang class
     static void resetSummary() {
     	studentsEncoded = 0;
     	passedCount = 0;
@@ -315,7 +314,8 @@ public class CompProgAct {
     		failedCount++;
     	}
     }
-    
+
+	//display ng results for the whole class
     static void displaySummary() {
     	double classAverage = sumAverages / studentsEncoded;
     	
@@ -329,7 +329,8 @@ public class CompProgAct {
     	System.out.println("Dropped                 : " + droppedCount);
     	System.out.println("Grade of 1.75 or better : " + deansListCount);
     }
-    
+
+	//loop kung mag another class pa o hindi
     static boolean askAnotherClass() {
     	while (true) {
     		System.out.print("\nEncode another class? (Y/N): ");
