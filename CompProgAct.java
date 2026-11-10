@@ -1,5 +1,4 @@
 package JavaChiz;
-
 import java.util.Scanner;
 public class CompProgAct {
 	
